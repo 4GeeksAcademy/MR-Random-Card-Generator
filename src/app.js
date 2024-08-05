@@ -9,6 +9,11 @@ window.onload = function() {
   genCard();
   var button = document.getElementById("boton");
   button.addEventListener("click", genCard);
+  var resizeButton = document.getElementById("resizeButton");
+  resizeButton.addEventListener("click", resizeCard);
+
+  setInterval(genCard, 10000);
+  startCountdown();
 };
 
 function genCard() {
@@ -27,6 +32,7 @@ function genCard() {
     "K",
     "Q"
   ];
+
   let suits = ["♦", "♥", "♠", "♣"];
   let suitNames = ["diamond", "heart", "spade", "club"];
 
@@ -36,5 +42,35 @@ function genCard() {
   let suitName = suitNames[randomSuitIndex];
 
   let cardElement = document.getElementById("card");
-  cardElement.innerHTML = `<span class="card ${suitName}">${randomValue} ${randomSuit}</span>`;
+  cardElement.innerHTML = `
+    <div class="suit1 ${suitName}">${randomSuit}</div>
+    <div class="value">${randomValue}</div>
+    <div class="suit2 ${suitName}">${randomSuit}</div>
+  `;
+}
+function resizeCard() {
+  let cardWidth = document.getElementById("cardWidth").value;
+  let cardHeight = document.getElementById("cardHeight").value;
+  let cardElement = document.getElementById("card");
+
+  if (cardWidth) {
+    cardElement.style.width = `${cardWidth}px`;
+  }
+
+  if (cardHeight) {
+    cardElement.style.height = `${cardHeight}px`;
+  }
+}
+
+function startCountdown() {
+  let countdownElement = document.getElementById("countdown");
+  let countdownValue = 10;
+
+  setInterval(() => {
+    countdownValue -= 1;
+    if (countdownValue < 0) {
+      countdownValue = 10;
+    }
+    countdownElement.textContent = countdownValue;
+  }, 1000);
 }

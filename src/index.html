@@ -15,9 +15,27 @@
     <div class="container">
       <div class="card text-center mt-5" id="card"></div>
     </div>
-    <div class="container mt-5"></div>
-    <div class="text-center">
+    <div class="container mt-5 text-center">
       <a href="#" class="btn btn-primary" id="boton">Generate New Card</a>
+    </div>
+    <div class="container mt-3">
+      <div mt-5>
+        <input type="number" id="cardWidth" placeholder="Width (px)" />
+        <input type="number" id="cardHeight" placeholder="Height (px)" />
+        <button
+          class="btn btn-warning"
+          for="btn-check-outlined"
+          id="resizeButton"
+        >
+          Resize Card
+        </button>
+      </div>
+    </div>
+    <div class="container">
+      <li class="list-group-item mt-3 text-center">
+        Tiempo para el cambio de carta
+        <span class="badge bg-primary rounded-pill" id="countdown">10</span>
+      </li>
     </div>
   </body>
 </html>

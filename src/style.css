@@ -22,15 +22,28 @@ body {
   position: relative;
   text-align: center;
 }
-.heart {
-  color: red;
+.list-group-item {
+  width: 500px;
 }
+.heart,
 .diamond {
   color: red;
 }
-.spade {
-  color: black;
-}
+
+.spade,
 .club {
   color: black;
+}
+
+.suit1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.suit2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: rotate(0.5turn);
 }
