@@ -1,1 +1,36 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background-color: green;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.card {
+  width: 150px;
+  height: 200px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+}
+.heart {
+  color: red;
+}
+.diamond {
+  color: red;
+}
+.spade {
+  color: black;
+}
+.club {
+  color: black;
+}
